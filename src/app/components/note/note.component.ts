@@ -9,6 +9,7 @@ import { Note } from 'src/app/models/note';
 export class NoteComponent implements OnInit {
 
   public note: Note;
+  public show: boolean;
   public notes: Array<any>;
   public keys: Array<string>;
 
@@ -16,6 +17,7 @@ export class NoteComponent implements OnInit {
   constructor() {
     this.note = new Note('', '');
     this.notes = [];
+    this.show = true;
   }
 
   ngOnInit() { 
@@ -52,5 +54,12 @@ export class NoteComponent implements OnInit {
 
   onDeleteNote(form){
     form.reset();
+  }
+
+  onCopyNotes(text){
+    text.disabled = false;
+    text.select();
+    document.execCommand("copy");
+    text.disabled = true;
   }
 }

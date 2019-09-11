@@ -14,5 +14,8 @@
 <div class = "note" 
     *ngFor="let note of notes">
     <h3>{{note.title}}</h3>
-    <textarea disabled>{{note.body}}</textarea>
+    <textarea disabled="true" #textNote>{{note.body}}</textarea>
+    <br>
+    <button class="btnNote" (click)="onCopyNotes(textNote)">Copy</button>
+    <button class="btnNote" (click)="onDeleteNote(textNote)">Delete</button>
 </div>
