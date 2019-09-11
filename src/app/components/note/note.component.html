@@ -1,0 +1,18 @@
+<div class = "formNote">
+    <form #formNote>
+        <input type="text" name="title" placeholder="TITLE" autocomplete="off"/>
+        <br>
+        <textarea rows="5" name="body" placeholder="BODY" autocomplete="off"></textarea>
+        <br>
+    </form>  
+    <button class="btnAddNote"(click)="onAddNote(formNote)">Add Note</button>
+    <button class="btnAddNote" (click)="onCopyNote(formNote)">Copy</button>
+    <button class="btnAddNote" (click)="onDeleteNote(formNote)">Delete</button>
+</div>
+
+
+<div class = "note" 
+    *ngFor="let note of notes">
+    <h3>{{note.title}}</h3>
+    <div>{{note.body}}</div>
+</div>
