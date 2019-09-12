@@ -11,11 +11,11 @@
 </div>
 
 
-<div class = "note" 
-    *ngFor="let note of notes">
+<div *ngFor="let note of notes"
+    [class] = "note.visible ? 'note' : 'notVisible'">
     <h3>{{note.title}}</h3>
     <textarea disabled="true" #textNote>{{note.body}}</textarea>
     <br>
     <button class="btnNote" (click)="onCopyNotes(textNote)">Copy</button>
-    <button class="btnNote" (click)="onDeleteNote(textNote)">Delete</button>
+    <button class="btnNote" (click)="onDelete(note)">Delete</button>
 </div>

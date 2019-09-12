@@ -121,6 +121,10 @@ nav {
     margin-left: 5px;
 }
 
+.notVisible {
+    display: none;
+}
+
 .note {
     margin: 25px auto;
     border-radius: 5px;
@@ -141,6 +145,10 @@ nav {
     height: 250px;
     border: none;
     margin-top: 15px;
+    background: rgba(75, 7, 235, 0.747);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 

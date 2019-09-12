@@ -15,7 +15,7 @@ export class NoteComponent implements OnInit {
 
 
   constructor() {
-    this.note = new Note('', '');
+    this.note = new Note('', '', true);
     this.notes = [];
     this.show = true;
   }
@@ -39,7 +39,8 @@ export class NoteComponent implements OnInit {
 
       this.note = {
         title: form.title.value,
-        body: form.body.value
+        body: form.body.value,
+        visible: true
       }
       localStorage.setItem(form.title.value, JSON.stringify(this.note));
       this.notes.push(this.note);
@@ -61,5 +62,10 @@ export class NoteComponent implements OnInit {
     text.select();
     document.execCommand("copy");
     text.disabled = true;
+  }
+
+  onDelete(note){
+    note.visible = false;
+    localStorage.removeItem(note.title);
   }
 }
