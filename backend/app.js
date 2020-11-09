@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
-/* Routes */
+/* Import Routes */
 
 // Connection to database 
 mongoose.connect("mongodb+srv://joan:atlaspassword@cluster0-9ztll.gcp.mongodb.net/mean-posts", {
@@ -25,8 +25,6 @@ app.use((req,res,next) => {
     next();
 });
 
-//All incoming requests coming to api/posts will get directed to routerPosts
-app.use("/api/posts", routerPosts);
-app.use("/api/users", routerUsers);
+/* Use Routes */
 
 app.listen(3000);
