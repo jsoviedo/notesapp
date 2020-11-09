@@ -38,7 +38,7 @@ router.get('/',(req, res, next) => {
     .then(snippets => {
         res.status(200).json({
             'message': 'Snippets fetched succesfully',
-            'Snippets': snippets
+            'snippets': snippets
         });
     })
     .catch(err => {

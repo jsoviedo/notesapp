@@ -1,9 +1,17 @@
 <h2>Select a Type of Snippet</h2>
 <mat-form-field appearance="fill">
-  <mat-label>Notes</mat-label>
-  <select matNativeControl required>
+  <select matNativeControl required
+    #mySelect
+    (change)='onOptionSelected(mySelect.value)'>
     <option value="calm">Calm Down</option>
     <option value="step">Step by Step</option>
     <option value="possible">That's not Possible</option>
   </select>
 </mat-form-field>
+
+<div *ngIf = "notes">
+  <div *ngFor="let note of notes">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.content }}</p>
+  </div> 
+</div>
