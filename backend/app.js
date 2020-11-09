@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 /* Import Routes */
+const routerSnippets = require('./routes/snippet');
 
 // Connection to database 
 mongoose.connect("mongodb+srv://joan:atlaspassword@cluster0-9ztll.gcp.mongodb.net/mean-posts", {
@@ -26,5 +27,6 @@ app.use((req,res,next) => {
 });
 
 /* Use Routes */
+app.use("/api/snippets", routerSnippets);
 
-app.listen(3000);
+module.exports = app;
