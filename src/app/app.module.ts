@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app.routing';
 
+import {MatSelectModule} from '@angular/material/select';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -11,6 +13,8 @@ import { CatComponent } from './components/cat/cat.component';
 import { BirdComponent } from './components/bird/bird.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NoteComponent } from './components/note/note.component';
+import { NotesListComponent } from './components/notes-list/notes-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,15 @@ import { NoteComponent } from './components/note/note.component';
     CatComponent,
     BirdComponent,
     FooterComponent,
-    NoteComponent
+    NoteComponent,
+    NotesListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routing
+    routing,
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [
     appRoutingProviders
