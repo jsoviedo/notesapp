@@ -10,7 +10,7 @@ import { NoteComponent } from './components/note/note.component';
 
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: NoteComponent },
     { path: 'dogs', component: DogComponent },
     { path: 'cats', component: CatComponent },
     { path: 'birds', component: BirdComponent },

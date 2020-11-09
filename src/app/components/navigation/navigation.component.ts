@@ -14,10 +14,7 @@ export class NavigationComponent implements OnInit {
 
 
   constructor() { 
-    this.cats = "Cats";
-    this.dogs = "Dogs";
-    this.birds = "Birds";
-    this.notes = "Notes"
+    this.notes = "New Notes"
   }
 
   ngOnInit() {
