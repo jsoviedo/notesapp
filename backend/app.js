@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
 const app = express();
 
 /* Import Routes */
@@ -16,6 +18,8 @@ mongoose.connect("mongodb+srv://joan:atlaspassword@cluster0-9ztll.gcp.mongodb.ne
 .catch( err => {
     console.log(err);
 });
+
+app.use(bodyParser.json());
 
 //CORS Policy
 app.use((req,res,next) => {

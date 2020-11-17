@@ -8,8 +8,8 @@ const Snippet = require('../models/snippet');
 router.post("/", (req, res, next) => {
     const snippet = new Snippet({
         _id: mongoose.Types.ObjectId(),
-        title: "Test Snippet",
-        content: "Content of the test Snippet"
+        title: req.body.title,
+        content: req.body.content
     });
     snippet.save() //Save the post to the database 
     .then( result => {

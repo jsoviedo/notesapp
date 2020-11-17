@@ -1,10 +1,12 @@
 import { Component, OnInit, ɵɵresolveBody } from '@angular/core';
 import { Note } from 'src/app/models/note';
+import { SnippetService } from 'src/app/services/snippets.service';
 
 @Component({
   selector: 'app-note',
   templateUrl: './note.component.html',
-  styleUrls: ['./note.component.css']
+  styleUrls: ['./note.component.css'],
+  providers: [SnippetService]
 })
 export class NoteComponent implements OnInit {
 
@@ -14,7 +16,9 @@ export class NoteComponent implements OnInit {
   public keys: Array<string>;
 
 
-  constructor() {
+  constructor(
+    private snippetService: SnippetService
+  ) {
     this.note = new Note('', '', true);
     this.notes = [];
     this.show = true;
@@ -34,8 +38,16 @@ export class NoteComponent implements OnInit {
 
 
   onAddNote(form){
+    this.snippetService.createSnippet(form.title.value, form.content.value)
+    .subscribe(response => {
+      console.log(response);
+    },
+    error => {
+      console.log(error);
+    });
+    form.reset();
     
-    if( form.title.value !== '' && form.body.value !== '') {
+    /*if( form.title.value !== '' && form.body.value !== '') {
 
       this.note = {
         title: form.title.value,
@@ -45,7 +57,7 @@ export class NoteComponent implements OnInit {
       localStorage.setItem(form.title.value, JSON.stringify(this.note));
       this.notes.push(this.note);
       form.reset();
-    }
+    }*/
   }
 
   onCopyNote(form){

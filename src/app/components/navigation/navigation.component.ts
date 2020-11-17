@@ -7,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  public cats: string;
-  public dogs: string;
-  public birds: string;
   public notes: string;
+  public list: string;
 
 
   constructor() { 
-    this.notes = "New Notes"
+    this.notes = "New Notes";
+    this.list = "My Notes";
   }
 
   ngOnInit() {
