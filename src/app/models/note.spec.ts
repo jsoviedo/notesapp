@@ -1,4 +1,4 @@
-import { Note } from './note';
+import { Snippet } from './snippet';
 
 describe('Note', () => {
   it('should create an instance', () => {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from 'src/app/models/note';
+import { Snippet } from 'src/app/models/snippet';
 import { SnippetService } from 'src/app/services/snippets.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { SnippetService } from 'src/app/services/snippets.service';
 export class NotesListComponent implements OnInit {
 
   public notes: Array<string>;
-  public note: Note;
+  public note: Snippet;
 
   constructor(
     private _service: SnippetService 

@@ -1,4 +1,4 @@
-export class Note {
+export class Snippet {
 
     constructor(
         public title: string,

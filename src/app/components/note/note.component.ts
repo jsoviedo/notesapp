@@ -1,5 +1,5 @@
 import { Component, OnInit, ɵɵresolveBody } from '@angular/core';
-import { Note } from 'src/app/models/note';
+import { Snippet } from 'src/app/models/snippet';
 import { SnippetService } from 'src/app/services/snippets.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { SnippetService } from 'src/app/services/snippets.service';
 })
 export class NoteComponent implements OnInit {
 
-  public note: Note;
+  public note: Snippet;
   public show: boolean;
   public notes: Array<any>;
   public keys: Array<string>;
@@ -19,7 +19,7 @@ export class NoteComponent implements OnInit {
   constructor(
     private snippetService: SnippetService
   ) {
-    this.note = new Note('', '', true);
+    this.note = new Snippet('', '', true);
     this.notes = [];
     this.show = true;
   }
