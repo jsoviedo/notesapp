@@ -9,7 +9,7 @@
   </select>
 </mat-form-field>
 
-<div *ngFor="let note of notes">
+<div *ngFor="let note of notes" style="margin-top:10px;">
   <div *ngIf = "notes">
     <mat-accordion >
       <mat-expansion-panel hideToggle>
@@ -21,9 +21,6 @@
           <mat-panel-title>
             {{ note.title }}
           </mat-panel-title>
-          <mat-panel-description>
-            {{ note.content }}
-          </mat-panel-description>
         </mat-expansion-panel-header>
             {{ note.content }}
       </mat-expansion-panel>

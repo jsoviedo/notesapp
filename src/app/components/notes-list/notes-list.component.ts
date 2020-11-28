@@ -18,6 +18,16 @@ export class NotesListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this._service.getSnippets().subscribe(
+      response => {
+        let res: any = response;
+        this.notes = res.snippets;
+        console.log(this.notes);
+      },
+      error  => {
+        console.log(error);
+      }
+    );
   }
 
   onOptionSelected(option) {
