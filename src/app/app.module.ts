@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatExpansionModule
   ],
   providers: [
     appRoutingProviders
